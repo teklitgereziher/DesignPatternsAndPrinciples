@@ -2,7 +2,7 @@
 ## SOLID Design Principles
 
 ### Single Responsibility Principle (SRP)
-SPR states that "A class should have only one reason to change". In other words, each class in a software should handle single responsibility from the set of functionalities provided by the software.
+SPR states that "A class should have only one reason to change". In other words, each class in a software should handle single responsibility from the set of functionalities provided by the software. It increase cohesion and loose coupling of the software. SRP also enables you to follow the Separation of Concerns Principle (SCP). SCP states that a program should be broken down into distinct parts where each part addresses a specific concern or set of information that affects the program. That is, high-level business logic should not concern on the low-level implementation.
 ### Liskov Substitution Principle (LSP)
 LSP states that "Drive types must be substitutable for their base types". That means, if a class is inheriting from a base class, then the reference to the base class can be replaced with the derived class reference without affecting the functionality of the program. LSP is an extension of the OCP.
 ##### Implementation Guidelines
