@@ -1,4 +1,4 @@
-# Solid Design Principles And Design Patterns
+# Design Patterns And Principles 
 SOLID Design Principles
 
 
