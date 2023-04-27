@@ -1,4 +1,4 @@
-# Design Patterns And Principles 
+# Design Patterns and Principles 
 ## SOLID Design Principles
 
 ### Single Responsibility Principle (SRP)
