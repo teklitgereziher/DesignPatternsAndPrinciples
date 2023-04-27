@@ -20,7 +20,7 @@ That means, any new functionality should be implemented by adding new classes, a
 ### Interface Segregation Principle (ISP)
 ISP states that no client should be forced to implement a method in an interface that it doesn’t use. If the clent does not have any reason to use the method, the class should not be forced to implement it. So, break down the big interface into smaller interfaces.
 ##### Implementation Guidelines
-- No client should be forced to implement on methods it does not use.
+- No client should be forced to implement methods that it does not use them.
 - Instead of one big interface break it down into small interfaces based on groups of methods with related functionalities.
 
 ### Dependency Inversion Principle (DIP)
