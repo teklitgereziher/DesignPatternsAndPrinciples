@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidPrinciples", "SolidPrinciples\SolidPrinciples.csproj", "{35802835-A52C-4F76-A478-1FD621D1B289}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolidDesignPrinciples", "SolidDesignPrinciples\SolidDesignPrinciples.csproj", "{35802835-A52C-4F76-A478-1FD621D1B289}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{82D1CF18-8C7C-4075-B892-1D8206CF4C75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{82D1CF18-8C7C-4075-B892-1D8206CF4C75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
