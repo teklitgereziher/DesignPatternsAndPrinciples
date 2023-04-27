@@ -1,6 +1,9 @@
 ﻿using EmployeeAfterOCP = SolidPrinciples.OCP.AfterOCP;
 using EmployeeBeforeOCP = SolidPrinciples.OCP.BeforeOCP;
 using EmployeeBeforeLSP = SolidPrinciples.LSP.BeforeLSP;
+using EmployeeAfterLSP = SolidPrinciples.LSP.Abstract.AfterLSP;
+using EmployeeImplementationsAfterLSP = SolidPrinciples.LSP.Implementations.AfterLSP;
+using IEmployeeAfterLSP = SolidDesignPrinciples.LSP.AfterLSP;
 
 namespace SolidPrinciples
 {
@@ -52,14 +55,43 @@ namespace SolidPrinciples
               ja.CalculateBonus(150000).ToString()));
             // this method call will throw an exception.
             // Hence the ContractEmployee voilates the LSP 
-            Console.WriteLine(string.Format("Employee {0} Bonus: {1}",
-              mik.ToString(),
-              mik.CalculateBonus(150000).ToString()));
-            Console.ReadLine();
+            //Console.WriteLine(string.Format("Employee {0} Bonus: {1}",
+            //  mik.ToString(),
+            //  mik.CalculateBonus(150000).ToString()));
+            
 
             // After LSP
-
+            List<EmployeeAfterLSP.Employee> employees = new List<EmployeeAfterLSP.Employee>
+            {
+                new EmployeeImplementationsAfterLSP.PermanentEmployee(1, "John"),
+                new EmployeeImplementationsAfterLSP.TemporaryEmployee(2, "Jason"),
+                // This gives a compile time error, which would have thrown a run-time error if LSP have not been applied.
+                //new EmployeeImplementationsAfterLSP.ContractEmployee(2, "Jason")
+            };
+            foreach(var employee in employees)
+            {
+                Console.WriteLine(string.Format("Employee {0} Bonus: {1}",
+                    employee.ToString(),
+                    employee.CalculateBonus(150000).ToString(),
+                    employee.GetMinimumSalary().ToString()));
+            }
+            Console.WriteLine();
+            List<IEmployeeAfterLSP.IEmployee> employeeList = new List<IEmployeeAfterLSP.IEmployee>
+            {
+                new EmployeeImplementationsAfterLSP.PermanentEmployee(1, "John"),
+                new EmployeeImplementationsAfterLSP.TemporaryEmployee(2, "Jason"),
+                new EmployeeImplementationsAfterLSP.ContractEmployee(3, "Mike")
+            };
+            foreach (var employee in employeeList)
+            {
+                Console.WriteLine(string.Format("Employee {0} MinSalary: {1}",
+                    employee.ToString(),
+                    employee.GetMinimumSalary().ToString()));
+            }
+            Console.WriteLine();
             // End --------------------- Liskov Substitution Principle ---------------------
+
+            Console.ReadLine();
         }
     }
 }

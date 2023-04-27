@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="DIP\" />
-    <Folder Include="LSP\AfterLSP\" />
     <Folder Include="OCP\AfterOCP\" />
   </ItemGroup>
 
