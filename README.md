@@ -26,3 +26,19 @@ ISP states that no client should be forced to implement a method in an interface
 ### Dependency Inversion Principle (DIP)
 DIP "High-level modules or classes of a software should not depend on low-level modules or classes. Instead both of them should depend on abstractions." That means, details should depend on abstractions but not vice versa. In other words, the high-level and low-level classes or modules should interact through abstractions or interfaces.
 ## Design Patterns
+Design patterns are reusable solutions to recurring problems in the domain of software design. Some of the commonly occurring problems in the software development life cycle are:
+- Creation and disposal of objects -> creational pattern
+- Interaction between objects -> behavioral pattern
+- Structure of classes -> which is the structural pattern
+- - This enhances cohesion and loose coupling, maintainability
+
+### Creational Pattern
+Creational patterns help to solve the problem of object creation and initialization by abstracting the way of object creation and initialization process. It hides the object creation logic by avoiding instantiation of objects directly using the new operator.
+1. **Singleton Pattern**
+Provides a solution on how to create a class that has only one instance across the whole application.
+##### Implementation guidelines:
+- Make sure that only one instance of a class exists
+- Declare the constructor of the class with private access modifier
+- The Singleton instance should be stored in a private static field.
+- Provide public static method that returns a reference to the Singleton instance
+- Make sure the Singleton instance is thread safe
