@@ -37,6 +37,9 @@ namespace DesignPatterns
             //thread2.Join();
 
             //Parallel.Invoke(() => TestSingleTokenThreadSafe("PUBLIC_TOKEN"), () => TestSingleTokenThreadSafe("PRIVATE_TOKEN"));
+
+            // Singleton instance using Eager Loading
+            Parallel.Invoke(() => TestSingleTokenThreadSafe("PUBLIC_TOKEN"), () => TestSingleTokenThreadSafe("PRIVATE_TOKEN"));
             // END --------------------- Singleton Pattern ---------------------------
         }
     }
