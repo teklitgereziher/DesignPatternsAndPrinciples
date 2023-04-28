@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DIP\" />
+    <Folder Include="DIP\BeforeDIP\" />
+    <Folder Include="DIP\AfterDIP\" />
     <Folder Include="OCP\AfterOCP\" />
   </ItemGroup>
 
