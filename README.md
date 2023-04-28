@@ -30,13 +30,13 @@ Design patterns are reusable solutions to recurring problems in the domain of so
 - Creation and disposal of objects -> creational pattern
 - Interaction between objects -> behavioral pattern
 - Structure of classes -> which is the structural pattern
-- - This enhances cohesion and loose coupling, maintainability
+-  This enhances cohesion and loose coupling, maintainability
 
 ### Creational Pattern
 Creational patterns help to solve the problem of object creation and initialization by abstracting the way of object creation and initialization process. It hides the object creation logic by avoiding instantiation of objects directly using the new operator.
 1. **Singleton Pattern**
 Provides a solution on how to create a class that has only one instance across the whole application.
-##### Implementation guidelines:
+**Implementation guidelines**:
 - Make sure that only one instance of a class exists
 - Declare the constructor of the class with private access modifier
 - The Singleton instance should be stored in a private static field.
