@@ -4,7 +4,7 @@
 ### Single Responsibility Principle (SRP)
 SPR states that "A class should have only one reason to change". In other words, each class in a software should handle single responsibility from the set of functionalities provided by the software. It increase cohesion and loose coupling of the software. SRP also enables you to follow the Separation of Concerns Principle (SCP). SCP states that a program should be broken down into distinct parts where each part addresses a specific concern or set of information that affects the program. That is, high-level business logic should not concern on the low-level implementation.
 ### Liskov Substitution Principle (LSP)
-LSP states that "Drive types must be substitutable for their base types". That means, if a class is inheriting from a base class, then the reference to the base class can be replaced with the derived class reference without affecting the functionality of the program. LSP is an extension of the OCP.
+LSP states that "Drive types must be substitutable for their base types". That means, if a class is inheriting from a base class, then the reference to the base class can be replaced with the derived class reference without affecting the functionality of the program. LSP is an extension of the OCP. In other words, If class A is a subtype of class B, instance of class B should be replacable with instance of class A without affecting the existing behavior of the program.
 ##### Implementation Guidelines
 - Subtypes should not thow new exceptions unless they are part of the existing exception hierarchy.
 - Clients should not know which specific subtype they are calling. The client should behave the same regardless of the subtype instance that is given.
@@ -12,7 +12,7 @@ LSP states that "Drive types must be substitutable for their base types". That m
 
 ### Open /Closed Principle (OCP)
 OCP states that "Software entities such as classes, modules, and functions should be open for extension, but closed for modification".
-That means, any new functionality should be implemented by adding new classes, attributes, or methods by driving from the original class instead of changing the current ones or existing ones.
+That means, any new functionality should be implemented by adding new classes, attributes, or methods by driving from the original class instead of changing the current ones or existing ones. **Strategy pattern** helps us to follow the OCP.
 ##### Implementation Guidelines
 - Implement the new functionality on new derived classes
 - Allow clients to access the original class with an abstract interface.
@@ -24,5 +24,5 @@ ISP states that no client should be forced to implement a method in an interface
 - Instead of one big interface break it down into small interfaces based on groups of methods with related functionalities.
 
 ### Dependency Inversion Principle (DIP)
-
+DIP "High-level modules or classes of a software should not depend on low-level modules or classes. Instead both of them should depend on abstractions." That means, details should depend on abstractions but not vice versa. In other words, the high-level and low-level classes or modules should interact through abstractions or interfaces.
 ## Design Patterns
