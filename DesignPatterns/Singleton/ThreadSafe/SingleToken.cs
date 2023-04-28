@@ -7,11 +7,16 @@
     public class SingleToken
     {
         private static SingleToken _token;
+        private static int _counter = 0;
         public string TokenValue { get; private set; }
         // The lock object will be used to synchronize threads during first access to the Singleton
         private static object _lock = new object();
 
-        private SingleToken() { }
+        private SingleToken() 
+        {
+            _counter++;
+            Console.WriteLine($"Counter = {_counter}");
+        }
 
         public static SingleToken GetSingleTokenInstance(string value)
         {

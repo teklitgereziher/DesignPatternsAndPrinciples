@@ -3,8 +3,13 @@
     public sealed class SingleToken
     {
         private static SingleToken _token;
+        private static int _counter = 0;
 
-        private SingleToken() { }
+        private SingleToken() 
+        {
+            _counter++;
+            Console.WriteLine($"Counter = {_counter}");
+        }
 
         public static SingleToken GetSingleTokenInstance()
         {

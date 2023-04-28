@@ -5,10 +5,15 @@ namespace DesignPatterns
 {
     internal class Program
     {
-        public static void TestSingleton(string value)
+        public static void TestSingleTokenThreadSafe(string value)
         {
             ThreadSafeSingleton.SingleToken singleton = ThreadSafeSingleton.SingleToken.GetSingleTokenInstance(value);
             Console.WriteLine(singleton.TokenValue);
+        }
+
+        public static void TestSingleTokenNonThreadSafe(string value)
+        {
+            NoThreadSafeSingleton.SingleToken singleton = NoThreadSafeSingleton.SingleToken.GetSingleTokenInstance();
         }
         static void Main(string[] args)
         {
@@ -19,6 +24,7 @@ namespace DesignPatterns
             ////Check if the two instances are equal
             //if (token1 == token2) Console.WriteLine("Creation of Single instance succeeded!");
             //else Console.WriteLine("Creation of Single instance failed!");
+            //Parallel.Invoke(() => TestSingleTokenNonThreadSafe("PUBLIC_TOKEN"), () => TestSingleTokenNonThreadSafe("PRIVATE_TOKEN"));
 
             // Thread safe Singleton pattern
             //Thread thread1 = new Thread(() => { TestSingleton("PUBLIC_TOKEN"); });
@@ -30,7 +36,7 @@ namespace DesignPatterns
             //thread1.Join();
             //thread2.Join();
 
-            Parallel.Invoke(() => TestSingleton("PUBLIC_TOKEN"), () => TestSingleton("PRIVATE_TOKEN"));
+            //Parallel.Invoke(() => TestSingleTokenThreadSafe("PUBLIC_TOKEN"), () => TestSingleTokenThreadSafe("PRIVATE_TOKEN"));
             // END --------------------- Singleton Pattern ---------------------------
         }
     }
