@@ -21,14 +21,16 @@ namespace DesignPatterns
             //else Console.WriteLine("Creation of Single instance failed!");
 
             // Thread safe Singleton pattern
-            Thread thread1 = new Thread(() => { TestSingleton("PUBLIC_TOKEN"); });
-            Thread thread2 = new Thread(() => { TestSingleton("PRIVATE_TOKEN"); });
+            //Thread thread1 = new Thread(() => { TestSingleton("PUBLIC_TOKEN"); });
+            //Thread thread2 = new Thread(() => { TestSingleton("PRIVATE_TOKEN"); });
 
-            thread1.Start();
-            thread2.Start();
+            //thread1.Start();
+            //thread2.Start();
 
-            thread1.Join();
-            thread2.Join();
+            //thread1.Join();
+            //thread2.Join();
+
+            Parallel.Invoke(() => TestSingleton("PUBLIC_TOKEN"), () => TestSingleton("PRIVATE_TOKEN"));
             // END --------------------- Singleton Pattern ---------------------------
         }
     }
