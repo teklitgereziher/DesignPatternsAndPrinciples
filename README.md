@@ -40,5 +40,6 @@ Provides a solution on how to create a class that has only one instance across t
 - Make sure that only one instance of a class exists
 - Declare the constructor of the class with private access modifier
 - The Singleton instance should be stored in a private static field.
-- Provide public static method that returns a reference to the Singleton instance
+- Provide public static method that returns a reference to the Singleton instance 
+  - That is provide a single point of access to the Singleton instance
 - Make sure the Singleton instance is thread safe
