@@ -1,5 +1,7 @@
 ﻿using NoThreadSafeSingleton = DesignPatterns.Singleton.NonThreadSafe;
 using ThreadSafeSingleton = DesignPatterns.Singleton.ThreadSafe;
+using SingletonEagerLoading = DesignPatterns.Singleton.EagerLoading;
+using SingletonLazyLoading = DesignPatterns.Singleton.LazyLoading;
 
 namespace DesignPatterns
 {
@@ -14,6 +16,16 @@ namespace DesignPatterns
         public static void TestSingleTokenNonThreadSafe(string value)
         {
             NoThreadSafeSingleton.SingleToken singleton = NoThreadSafeSingleton.SingleToken.GetSingleTokenInstance();
+        }
+
+        public static void TestSingleTokenEagerLoading(string value)
+        {
+            SingletonEagerLoading.SingleToken singleton = SingletonEagerLoading.SingleToken.GetSingleTokenInstance(value);
+        }
+
+        public static void TestSingleTokenLazyLoading(string value)
+        {
+            SingletonLazyLoading.SingleToken singleton = SingletonLazyLoading.SingleToken.GetSingleTokenInstance(value);
         }
         static void Main(string[] args)
         {
@@ -39,7 +51,10 @@ namespace DesignPatterns
             //Parallel.Invoke(() => TestSingleTokenThreadSafe("PUBLIC_TOKEN"), () => TestSingleTokenThreadSafe("PRIVATE_TOKEN"));
 
             // Singleton instance using Eager Loading
-            Parallel.Invoke(() => TestSingleTokenThreadSafe("PUBLIC_TOKEN"), () => TestSingleTokenThreadSafe("PRIVATE_TOKEN"));
+            //Parallel.Invoke(() => TestSingleTokenEagerLoading("PUBLIC_TOKEN"), () => TestSingleTokenEagerLoading("PRIVATE_TOKEN"));
+
+            // Singleton instance using Lazy Loading
+            Parallel.Invoke(() => TestSingleTokenLazyLoading("PUBLIC_TOKEN"), () => TestSingleTokenLazyLoading("PRIVATE_TOKEN"));
             // END --------------------- Singleton Pattern ---------------------------
         }
     }
