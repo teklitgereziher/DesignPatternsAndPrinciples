@@ -2,13 +2,17 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DIP\BeforeDIP\" />
-    <Folder Include="DIP\AfterDIP\" />
+    <Compile Remove="DIP\**" />
+    <EmbeddedResource Remove="DIP\**" />
+    <None Remove="DIP\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="OCP\AfterOCP\" />
   </ItemGroup>
 
