@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Singleton.ThreadSafe
+namespace DesignPatterns.Creational.Singleton.ThreadSafe
 {
     /// <summary>
     /// This implementation is called "double check lock" and is safe in multithreaded environment.

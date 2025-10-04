@@ -1,5 +1,5 @@
 # Design Patterns and Principles 
-## SOLID Design Principles
+## SOLID Principles
 
 ### Single Responsibility Principle (SRP)
 SPR states that "A class should have only one reason to change". In other words, each class in a software should handle single responsibility from the set of functionalities provided by the software. It increase cohesion and loose coupling of the software. SRP also enables you to follow the Separation of Concerns Principle (SCP). SCP states that a program should be broken down into distinct parts where each part addresses a specific concern or set of information that affects the program. That is, high-level business logic should not concern on the low-level implementation.
@@ -43,3 +43,9 @@ Provides a solution on how to create a class that has only one instance across t
 - Provide public static method that returns a reference to the Singleton instance 
   - That is provide a single point of access to the Singleton instance
 - Make sure the Singleton instance is thread safe
+
+### Behavioral Pattern
+Behavioral patterns are concerned with the interaction between objects and how they communicate with each other. It helps to define the way of communication between objects in a flexible and reusable way.
+1. **Strategy Pattern**
+The Strategy pattern allows us to change object behaviors at runtime. Moreover, it plays a significant role in the composition over inheritance way of thinking and is the backbone of dependency injection.
+The Strategy pattern aims to extract a strategy from the host class that needs it (the context or consumer). That allows the consumer to decide on the strategy to use at runtime.

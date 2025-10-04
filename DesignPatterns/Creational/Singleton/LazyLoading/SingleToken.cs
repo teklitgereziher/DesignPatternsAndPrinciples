@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Singleton.EagerLoading
+namespace DesignPatterns.Creational.Singleton.LazyLoading
 {
     /// <summary>
     /// This implementation is called "double check lock" and is safe in multithreaded environment.
@@ -6,7 +6,7 @@
     /// </summary>
     public class SingleToken
     {
-        private static readonly SingleToken _token = new SingleToken();
+        private static readonly Lazy<SingleToken> _token = new Lazy<SingleToken>(() => new SingleToken());
         private static int _counter = 0;
         public string TokenValue { get; private set; }
 
@@ -16,12 +16,15 @@
             Console.WriteLine($"Counter = {_counter}");
         }
 
+        /// <summary>
+        /// By default, Lazy<T> objects are thread-safe. 
+        /// That is, if the constructor does not specify the kind of thread safety, the Lazy<T> objects it creates are thread-safe
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static SingleToken GetSingleTokenInstance(string value)
         {
-            // How it is thread safe?
-            // The CLR takes care of the variable initialization and it is thread safe.
-            // No need to write code for thread safety
-            return _token;
+            return _token.Value;
         }
 
         public void PrintToken()

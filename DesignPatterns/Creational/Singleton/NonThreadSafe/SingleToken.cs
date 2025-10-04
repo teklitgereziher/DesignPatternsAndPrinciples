@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Singleton.NonThreadSafe
+namespace DesignPatterns.Creational.Singleton.NonThreadSafe
 {
     public sealed class SingleToken
     {
