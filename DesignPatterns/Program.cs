@@ -1,3 +1,6 @@
+
+using DesignPatterns.Creational.AbstractFactory.Factory;
+
 namespace DesignPatterns
 {
   internal class Program
@@ -38,8 +41,43 @@ namespace DesignPatterns
       // END --------------------- Singleton Pattern ---------------------------
 
       // Begin --------------------- Strategy Pattern
-      DemoStrategyPattern();
+      //DemoStrategyPattern();
       // End --------------------- Strategy Pattern
+
+      // Begin --------------------- Abstract Factory Pattern
+      DemoAbstractFactoryPattern();
+      // End --------------------- Abstract Factory Pattern
+    }
+
+    private static void DemoAbstractFactoryPattern()
+    {
+      IVehicleFactory vehicleFactory;
+      string[] lowEndBikeFeatureList = ["Feature1", "Feature2", "Feature3"];
+      string[] HighEndCarFeatures = ["FeatureA", "FeatureB", "FeatureC"];
+      // Create a Low-End Vehicle Factory
+      vehicleFactory = new Creational.AbstractFactory.ConcreteFactories.LowEndVehicleFactory();
+      var lowEndBike = vehicleFactory.GetBike("Low-End Bike", lowEndBikeFeatureList);
+      var lowEndCar = vehicleFactory.GetCar("Low-End Car", HighEndCarFeatures);
+      Console.WriteLine(
+        "Bike Name: " + lowEndBike.GetBikeName()
+        + "Bike Features: " + lowEndBike.GetBikeFeatures());
+      Console.WriteLine(
+        "Car Name: " + lowEndCar.GetCarName()
+        + "Car Features: " + lowEndCar.GetCarFeatures());
+      Console.WriteLine("--------------------------------------------------");
+
+      // Create a High-End Vehicle Factory
+      string[] highEndBikeFeatures = ["FeatureX", "FeatureY", "FeatureZ"];
+      string[] highEndCarFeatures = ["FeatureL", "FeatureM", "FeatureN"];
+      vehicleFactory = new Creational.AbstractFactory.ConcreteFactories.HighEndVehicleFactory();
+      var highEndBike = vehicleFactory.GetBike("High-End Bike", highEndBikeFeatures);
+      var highEndCar = vehicleFactory.GetCar("High-End Car", highEndCarFeatures);
+      Console.WriteLine(
+        "Bike Name: " + highEndBike.GetBikeName()
+        + "Bike Features: " + highEndBike.GetBikeFeatures());
+      Console.WriteLine(
+        "Car Name: " + highEndCar.GetCarName()
+        + "Car Features: " + highEndCar.GetCarFeatures());
     }
 
     private static void DemoStrategyPattern()

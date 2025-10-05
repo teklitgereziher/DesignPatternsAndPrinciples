@@ -1,4 +1,4 @@
-# Design Patterns and Principles 
+# SOLID Principles and Design Patterns 
 ## SOLID Principles
 
 ### Single Responsibility Principle (SRP)
@@ -43,6 +43,18 @@ Provides a solution on how to create a class that has only one instance across t
 - Provide public static method that returns a reference to the Singleton instance 
   - That is provide a single point of access to the Singleton instance
 - Make sure the Singleton instance is thread safe
+
+2. **Factory Method Pattern**
+The Factory Method pattern focuses on creating a single type of object instead of a family.
+
+3. **Abstract Factory Pattern**
+The Abstract Factory pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+The Abstract Factory pattern is used to abstract the creation of a family of objects. It usually implies
+the creation of multiple object types within that family. A family is a group of related or dependent
+objects (classes).
+We use factories to create complex objects that can’t be assembled automatically by a dependency injection library.
+Abstract factory allows you to add or remove families of objects produced together without impacting the consumers (all actors communicate through abstractions).
+
 
 ### Behavioral Pattern
 Behavioral patterns are concerned with the interaction between objects and how they communicate with each other. It helps to define the way of communication between objects in a flexible and reusable way.
