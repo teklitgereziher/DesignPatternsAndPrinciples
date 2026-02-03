@@ -61,3 +61,64 @@ Behavioral patterns are concerned with the interaction between objects and how t
 1. **Strategy Pattern**
 The Strategy pattern allows us to change object behaviors at runtime. Moreover, it plays a significant role in the composition over inheritance way of thinking and is the backbone of dependency injection.
 The Strategy pattern aims to extract a strategy from the host class that needs it (the context or consumer). That allows the consumer to decide on the strategy to use at runtime.
+
+
+### Structural Pattern
+
+#### Decorator Pattern
+Decorator pattern allows to dynamically add new responsibilities or behaviors to objects without modifying the existing code.
+This pattern allows to add additional behaviors to objects at runtime without modifying the existing code that follows the Open-Closed principle.
+
+##### Main Features of the Decorator Pattern
+1. **Dynamic Behavior**: Add new functionalities at runtime.
+2. **Reusability**: Separate functionalities into reusable components.
+3. **Open/Closed Principle**: Objects remain open for extension but closed for modification.
+4. **Separation of Concerns**: Isolate responsibilities into individual decorators, making the code cleaner and easier to maintain.
+
+##### Common Use cases
+- Adding logging to specific operations.
+- Validating user input dynamically.
+- Implementing security mechanisms like authentication and authorization.
+- Enhancing functionality without creating a tangled inheritance hierarchy.
+
+##### Main Components of Decorator Pattern
+Decorator Pattern is made of three main components:
+ - **Base Interface**: Existing interface that defines the common functionalities.
+ - **Concrete Class**: Existing concrete class that implements common functionalities defined in the base interface.
+ - **Decorators**: Wrap the base interface to add or extend behaviors dynamically.
+
+```mermaid
+classDiagram
+class Client
+class IComponent {
+  +Operation(): any
+}
+class ComponentA {
+  +Operation(): any
+}
+
+Client --> IComponent
+ComponentA ..|> IComponent
+```
+A class diagram without decorators
+
+```mermaid
+classDiagram
+class Client
+class IComponent {
+  +Operation(): any
+}
+class ComponentA {
+  +Operation(): any
+}
+class DecoratorA {
+  - component: IComponent
+  +Operation(): any
+}
+
+Client --> IComponent
+ComponentA ..|> IComponent
+DecoratorA ..|> IComponent
+```
+Decorator class diagram
+

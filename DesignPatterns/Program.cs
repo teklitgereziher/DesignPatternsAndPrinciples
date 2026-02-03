@@ -37,16 +37,20 @@ namespace DesignPatterns
     static void Main(string[] args)
     {
       // BEGIN --------------------- Singleton Pattern ---------------------------
-      //DemoSingletonPattern();
+      // DemoSingletonPattern();
       // END --------------------- Singleton Pattern ---------------------------
 
       // Begin --------------------- Strategy Pattern
-      //DemoStrategyPattern();
+      // DemoStrategyPattern();
       // End --------------------- Strategy Pattern
 
       // Begin --------------------- Abstract Factory Pattern
-      DemoAbstractFactoryPattern();
+      // DemoAbstractFactoryPattern();
       // End --------------------- Abstract Factory Pattern
+
+      // Begin --------------------- Decorator Pattern
+      Structure.DecoratorPattern.Client.DecoratorMain();
+      // End --------------------- Decorator Pattern
     }
 
     private static void DemoAbstractFactoryPattern()
